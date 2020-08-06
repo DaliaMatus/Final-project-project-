@@ -6,13 +6,36 @@ export default class App extends Component {
       <div className='app'>
         <header className='app__header'>
           <div className='app__header-first'>
-            <a href='app.js'>Sweatshirts</a>
+            <button onClick='openMenu()'>
+              <i class="fas fa-bars" ></i>
+            </button>
+            <a href='app.js'> Sweatshirts</a>
           </div>
           <div className='app__header-second'>
             <a href='cart.js'>Cart</a>
             <a href='signin.js'>Sign in</a>
           </div>
         </header>
+        <aside className='app__aside'>
+          <h3>Colors</h3>
+          <button onClick='closeMenu()'>
+            <i class="far fa-window-close"></i>
+          </button>
+          <ul>           
+            <li>
+              <a href='app.js'>Black</a>
+            </li>
+            <li>
+              <a href='app.js'>Gray</a>
+            </li>
+            <li>
+              <a href='app.js'>Pink</a>
+            </li>
+            <li>
+              <a href='app.js'>White</a>
+            </li>
+          </ul>
+        </aside>
         <main className='app__main'>
           <div className='app__main-content'>
           <ul className='app__main-products'>

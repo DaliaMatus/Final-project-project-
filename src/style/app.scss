@@ -10,6 +10,15 @@
       justify-content: space-between;
       align-items: center;
       padding:0.5rem;
+
+      &-first button{
+        font-size:3rem;
+        padding:.5 rem;
+        background: none;
+        border:none;
+        color:#ffffff;
+        cursor: pointer;
+      }
       &-first a,
       &-second a{
           color:#ffffff;
@@ -27,6 +36,27 @@
           }
       }
   }
+
+  &__aside{
+    position:fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background-color: #000000;
+    height:50%;
+  }
+
+  &__aside.open{
+      transform: translateX(0);
+  }
+
+  &__aside button{
+      font-size:3rem;
+      padding:.5 rem;
+      background: none;
+      border:none;
+      color:#ffffff;
+      cursor: pointer;
+  }
   &__main{
       grid-row: main-s/main-e;
       &-products{
@@ -42,7 +72,7 @@
              height:50rem;
              box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);
         }
-    }
+      }
 
     &-product{
         display:flex;
@@ -59,7 +89,6 @@
     .product-name a{
         font-size:2rem;
         font-weight: bold;
-        text-decoration:none;
         color:#000000;
         transition: all .3s ease;
          &:hover {
@@ -95,6 +124,17 @@
      }
  }
 
+  progress::-webkit-progress-bar{
+    background:#efefef;
+  }
+  progress::-webkit-progress-value{
+    background:rgba(255, 51, 102, 0.86);
+  }
+  progress::-moz-progress-bar{
+    color:rgba(255, 51, 102, 0.86);
+    background:#efefef;
+  }
+
   &__footer{
       grid-row:footer-s/footer-e;
       background-color: #000000;
@@ -104,15 +144,4 @@
       align-items: center;
 
   }
-}
-
-progress::-webkit-progress-bar{
-  background:#efefef;
-}
-progress::-webkit-progress-value{
-  background:rgba(255, 51, 102, 0.86);
-}
-progress::-moz-progress-bar{
-  color:rgba(255, 51, 102, 0.86);
-  background:#efefef;
 } 
