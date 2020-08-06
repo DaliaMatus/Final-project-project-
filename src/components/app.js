@@ -24,7 +24,7 @@ export default class App extends Component {
               <Link to='/'> Sweatshirts</Link>
             </div>
             <div className='app__header-second'>
-              <a href='cart.js'>Cart</a>
+              <a href='cart.js'>Cart </a>
               <a href='signin.js'>Sign in</a>
             </div>
           </header>

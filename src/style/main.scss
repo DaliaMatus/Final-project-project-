@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-size:1rem;
+  font-size:1.5rem;
   font-family: 'Open Sans', sans-serif;
   //color:#FFFFFF;
   //rgb(255, 51, 102);
@@ -35,3 +35,6 @@ a{
 
 
 @import './app.scss';
+
+//Product
+@import '../style/route/products.scss';
