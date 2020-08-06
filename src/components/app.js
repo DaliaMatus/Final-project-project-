@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter,Route } from "react-router-dom";
+import { BrowserRouter,Route, Link } from "react-router-dom";
 
 import Home from './route/home';
 import Products from './route/products';
@@ -21,7 +21,7 @@ export default class App extends Component {
               <button onClick={openMenu}>
                 <i className="fas fa-bars" ></i>
               </button>
-              <a href='app.js'> Sweatshirts</a>
+              <Link to='/'> Sweatshirts</Link>
             </div>
             <div className='app__header-second'>
               <a href='cart.js'>Cart</a>
