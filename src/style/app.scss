@@ -42,7 +42,7 @@
     transform: translateX(-30rem);
     width: 30rem;
     background-color: #000000;
-    height:50%;
+    height:75%;
   }
 
   &__aside.open{
@@ -52,10 +52,32 @@
   &__aside button{
       font-size:3rem;
       padding:.5 rem;
+      //margin:0.5rem;
       background: none;
       border:none;
       color:#ffffff;
       cursor: pointer;
+  }
+
+  &__aside a{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    margin:5rem 0 5rem 0;
+    font-size:2rem;
+    font-weight: bold;
+    color:rgb(255, 51, 102);
+    transition: all .3s ease;
+        &:hover {
+            transform: scale(0.97);
+            color:#ffffff;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
   }
   &__main{
       grid-row: main-s/main-e;

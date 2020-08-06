@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 
 export default class App extends Component {
   render() {
+    const openMenu=()=> {
+      document.querySelector('.app__aside').classList.add('open');
+    };
+
+    const closeMenu=()=>{
+      document.querySelector('.app__aside').classList.remove('open');
+    };
     return(
       <div className='app'>
         <header className='app__header'>
           <div className='app__header-first'>
-            <button onClick='openMenu()'>
+            <button onClick={openMenu}>
               <i class="fas fa-bars" ></i>
             </button>
             <a href='app.js'> Sweatshirts</a>
@@ -18,7 +25,7 @@ export default class App extends Component {
         </header>
         <aside className='app__aside'>
           <h3>Colors</h3>
-          <button onClick='closeMenu()'>
+          <button onClick={closeMenu}>
             <i class="far fa-window-close"></i>
           </button>
           <ul>           
