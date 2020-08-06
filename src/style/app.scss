@@ -1,0 +1,44 @@
+.app{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:[header-s]5rem [header-e main-s] 1fr [main-e footer-s] 5rem[footer-e];
+  height:100vh;
+  &__header{
+      grid-row: header-s/header-e;
+      background-color: rgb(255, 51, 102);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:0.5rem;
+      &-first a,
+      &-second a{
+          color:#ffffff;
+          font-weight: bold;
+          text-decoration: none;
+          font-size:2.5rem ;
+          transition: all .3s ease;
+          &:hover {
+              transform: scale(0.97);
+              color:rgb(23, 25, 29);
+          }
+
+          &:active {
+              transform: scale(0.95);
+          }
+      }
+  }
+  &__main{
+      grid-row: main-s/main-e;
+
+  }
+
+  &__footer{
+      grid-row:footer-s/footer-e;
+      background-color: #000000;
+      color:#ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+  }
+}
