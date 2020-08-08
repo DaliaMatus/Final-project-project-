@@ -1,15 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
-import data from '../database';
+     
+function Home(props) {
+    
+  const [products, setProduct] =useState([]);
 
-export default class Home extends Component {
-    render() {
+    useEffect(() =>{
+      const fetchData = async ()=> {
+        const {data} = await axios.get("/api/products");
+        setProduct(data);
+      }
+      fetchData();
+      return()=>{
+        //
+      };
+    }, [])     
         return (
             <ul className='app__main-products'>
               {
-                data.products.map(product=>
-                <li>
+                products.map(product=>
+                <li key={product._id}>
                   <div className='app__main-product'>
                     <Link to={'/product/' + product._id}>
                         <img src={product.image} alt='product'/>
@@ -28,4 +40,6 @@ export default class Home extends Component {
             </ul>
         )
     }
-} 
+ 
+
+export default Home;
