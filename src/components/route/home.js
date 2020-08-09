@@ -16,7 +16,10 @@ function Home(props) {
         //
       };
     }, [])     
-        return loading ? <div className='loading'>Loading ...</div> :
+        return loading ? <div className='loading'>
+          <div className='loading1'></div>
+          <div className='loading2'></div>
+        </div> :
           error ? <div>{error}</div> :
             <ul className='app__main-products'>
               {
