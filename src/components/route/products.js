@@ -15,7 +15,11 @@ function Products(props) {
         return ()=>{
             //
         };
-    }, [])
+    }, []);
+
+    const handleAddToCart =()=>{
+        props.history.push('/cart/' + props.match.params.id + '?qty=' + qty)
+    }
         return (
             <div>
                 <div className="back-to-result">
@@ -58,7 +62,7 @@ function Products(props) {
                                         ${product.price}
                                         </li> 
                                         <li>
-                                        Status:{product.status}
+                                        Status:{product.countInStock>0? "In Stock" : "Unavailable"}
                                         </li> 
                                         <li>                              
                                             Quantity: <select value={qty} onChange={(e) =>{setQty(e.target.value)}}>
@@ -68,7 +72,10 @@ function Products(props) {
                                             </select>
                                         </li>
                                         <li>
-                                            <button>Add to Cart</button>
+                                            {product.countInStock>0 &&  
+                                            <button onClick={handleAddToCart}>Add to Cart</button>
+                                            }
+                                            
                                         </li> 
                                     </ul>
                                 </div>
