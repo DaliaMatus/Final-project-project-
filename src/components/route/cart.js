@@ -33,7 +33,7 @@ function Cart(props) {
                 <ul className="cart-list-container">
                     <li>
                         <h3>Shopping Cart</h3>
-                        <div>Price</div>
+                        <div className='price'>Price</div>
                     </li>
                     {
                     cartItems.length === 0 ?
@@ -45,13 +45,13 @@ function Cart(props) {
                                 <img src={item.image} alt="product"/>
                             </div>
                             <div className="cart-name">
-                                <div>
+                                <div className='name'>
                                     <Link to={"/product/" + item.product}>
                                     {item.name}
                                     </Link>
                 
                                 </div>
-                                <div>
+                                <div className='qty'>
                                     Qty:
                                     <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
                                         {[...Array(item.countInStock).keys()].map(x =>
@@ -73,9 +73,9 @@ function Cart(props) {
             </div>
             <div className="cart-action">
                 <h3>
-                    Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
+                    Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items)
                     :
-                    $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                    ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
                 </h3>
                 <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
                     Proceed to Checkout
