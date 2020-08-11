@@ -3,6 +3,7 @@ import { BrowserRouter,Route, Link } from "react-router-dom";
 
 import Home from './route/home';
 import Products from './route/products';
+import Cart from './route/cart';
 
 export default class App extends Component {
   render() {
@@ -52,6 +53,7 @@ export default class App extends Component {
             <div className='app__main-content'>
               <Route exact path="/" component={Home}/>
               <Route  path="/product/:id" component={Products}/>
+              <Route  path="/cart/:id?" component={Cart}/>
             </div>
           </main>
           <footer className='app__footer'>
