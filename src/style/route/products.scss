@@ -28,7 +28,9 @@
     }
     .details-image img{
         max-width:60rem;
-        width:100%;
+        max-height:60rem;
+        display:block;
+        margin:auto;
     }
 
     .details-info{
