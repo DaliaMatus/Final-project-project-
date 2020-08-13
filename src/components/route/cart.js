@@ -9,7 +9,8 @@ function Cart(props) {
   const cart = useSelector(state => state.cart);
 
   const {cartItems} = cart;
-
+  var subtotal=cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+  subtotal=subtotal.toFixed(2);
   const productId = props.match.params.id;
   const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function Cart(props) {
                 <ul className="cart-list-container">
                     <li>
                         <h3>Shopping Cart</h3>
-                        <div className='price'>Price</div>
+                        <div className='price'>Unit Price</div>
                     </li>
                     {
                     cartItems.length === 0 ?
@@ -73,9 +74,7 @@ function Cart(props) {
             </div>
             <div className="cart-action">
                 <h3>
-                    Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items)
-                    :
-                    ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                    Subtotal:${subtotal}
                 </h3>
                 <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
                     Proceed to Checkout
