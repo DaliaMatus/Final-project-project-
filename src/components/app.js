@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter,Route, Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 import Home from './route/home';
 import Products from './route/products';
@@ -8,6 +9,10 @@ import Signin from './route/signin';
 
 export default class App extends Component {
   render() {
+
+    const userSignin = useSelector(state=> state.userSignin);
+    const {userInfo}= userSignin;
+
     const openMenu=()=> {
       document.querySelector('.app__aside').classList.add('open');
     };
@@ -27,7 +32,10 @@ export default class App extends Component {
             </div>
             <div className='app__header-second'>
               <a href='cart.js'>Cart </a>
-              <Link to='/signin'>Sign in</Link>
+              {
+                userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
+                <Link to='/signin'>Sign in</Link>
+              }
             </div>
           </header>
           <aside className='app__aside'>
