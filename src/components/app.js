@@ -4,6 +4,7 @@ import { BrowserRouter,Route, Link } from "react-router-dom";
 import Home from './route/home';
 import Products from './route/products';
 import Cart from './route/cart';
+import Signin from './route/signin';
 
 export default class App extends Component {
   render() {
@@ -26,7 +27,7 @@ export default class App extends Component {
             </div>
             <div className='app__header-second'>
               <a href='cart.js'>Cart </a>
-              <a href='signin.js'>Sign in</a>
+              <Link to='/signin'>Sign in</Link>
             </div>
           </header>
           <aside className='app__aside'>
@@ -54,6 +55,7 @@ export default class App extends Component {
               <Route exact path="/" component={Home}/>
               <Route  path="/product/:id" component={Products}/>
               <Route  path="/cart/:id?" component={Cart}/>
+              <Route  path="/signin" component={Signin}/>
             </div>
           </main>
           <footer className='app__footer'>
