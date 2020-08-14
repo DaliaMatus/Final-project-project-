@@ -31,7 +31,7 @@ function Signin(props){
         <div className='form'>
             <form onSubmit={submitHandler} >
                 <ul className="form-container">
-                    <li><h2>Sign-In</h2></li>
+                    <li><h2>Sign in</h2></li>
                     <li>
                         {loading && <div className='loading'>
                             <div className='loading1'></div>
@@ -47,20 +47,22 @@ function Signin(props){
                             type="email" 
                             name="email" 
                             id="email" 
+                            placeholder="Email"
                             onChange={(e) => setEmail(e.target.value)}>
                         </input>
                     </li>
                     <li>
                         <label htmlFor="password">Password</label>
                         <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}>
                         </input>
                     </li>
                     <li>
-                        <button type="submit" className="button primary">Signin</button>
+                        <button type="submit" className="button primary">Sign in</button>
                     </li>
                     <li>
                         Not registered? Create account 
