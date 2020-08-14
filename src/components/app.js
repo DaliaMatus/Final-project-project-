@@ -3,7 +3,7 @@ import { BrowserRouter,Route, Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 import Home from './route/home';
-import Products from './route/products';
+import Product from './route/product';
 import Cart from './route/cart';
 import Signin from './route/signin';
 import Register from './route/register';
@@ -61,7 +61,7 @@ function App(){
           <main className='app__main'>
             <div className='app__main-content'>
               <Route exact path="/" component={Home}/>
-              <Route  path="/product/:id" component={Products}/>
+              <Route  path="/product/:id" component={Product}/>
               <Route  path="/cart/:id?" component={Cart}/>
               <Route  path="/signin" component={Signin}/>
               <Route  path="/register" component={Register}/>
