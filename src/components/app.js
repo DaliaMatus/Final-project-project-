@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter,Route, Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
@@ -8,11 +8,10 @@ import Cart from './route/cart';
 import Signin from './route/signin';
 import Register from './route/register';
 
-export default class App extends Component {
-  render() {
+function App(){
 
-    /*const userSignin = useSelector(state=> state.userSignin);
-    const {userInfo}= userSignin;*/
+    const userSignin = useSelector(state=> state.userSignin);
+    const {userInfo}= userSignin;
 
     const openMenu=()=> {
       document.querySelector('.app__aside').classList.add('open');
@@ -33,10 +32,10 @@ export default class App extends Component {
             </div>
             <div className='app__header-second'>
               <a href='cart.js'>Cart </a>
-              {/*
+              {
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign in</Link>
-              */}
+              }
             </div>
           </header>
           <aside className='app__aside'>
@@ -75,6 +74,7 @@ export default class App extends Component {
       </BrowserRouter>
     );
   }
-}
+
+export default App;
 
 
