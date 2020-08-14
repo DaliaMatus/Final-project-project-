@@ -6,12 +6,13 @@ import Home from './route/home';
 import Products from './route/products';
 import Cart from './route/cart';
 import Signin from './route/signin';
+import Register from './route/register';
 
 export default class App extends Component {
   render() {
 
-    const userSignin = useSelector(state=> state.userSignin);
-    const {userInfo}= userSignin;
+    /*const userSignin = useSelector(state=> state.userSignin);
+    const {userInfo}= userSignin;*/
 
     const openMenu=()=> {
       document.querySelector('.app__aside').classList.add('open');
@@ -32,10 +33,10 @@ export default class App extends Component {
             </div>
             <div className='app__header-second'>
               <a href='cart.js'>Cart </a>
-              {
+              {/*
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign in</Link>
-              }
+              */}
             </div>
           </header>
           <aside className='app__aside'>
@@ -64,6 +65,7 @@ export default class App extends Component {
               <Route  path="/product/:id" component={Products}/>
               <Route  path="/cart/:id?" component={Cart}/>
               <Route  path="/signin" component={Signin}/>
+              <Route  path="/register" component={Register}/>
             </div>
           </main>
           <footer className='app__footer'>
