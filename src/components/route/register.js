@@ -87,10 +87,13 @@ function Register(props) {
                         </input>
                     </li>
                     <li>
-                        <button type="submit" className="button primary">Create Account</button>
+                        <button type="submit" className="button signin">Create Account</button>
                     </li>
                     <li>
-                        Already have an account? <Link to="/signin">Sign in</Link>
+                        Already have an account? 
+                    </li>
+                    <li>
+                        <Link to="/signin"  className="button account text-center">Sign in</Link>
                     </li>
                 </ul>
             </form>

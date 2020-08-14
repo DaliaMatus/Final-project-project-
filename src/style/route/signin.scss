@@ -1,3 +1,4 @@
+//Sign in & Register
 .form{
     display: flex;
     justify-content: center;
@@ -33,7 +34,7 @@
     border-radius: .5rem;
   } 
 
-  .button.primary,.button.secondary{
+  .button.signin,.button.account{
     background-color: #000000;
     color:#FFFFFF;
     padding:1rem;

@@ -62,13 +62,13 @@ function Signin(props){
                         </input>
                     </li>
                     <li>
-                        <button type="submit" className="button primary">Sign in</button>
+                        <button type="submit" className="button signin">Sign in</button>
                     </li>
                     <li>
                         Not registered? Create account 
                     </li>
                     <li>
-                        <Link to="/register" className="button secondary text-center" >Create your account</Link>
+                        <Link to="/register" className="button account text-center" >Create your account</Link>
                     </li>
                 </ul>
             </form>
