@@ -71,11 +71,11 @@ function Products(props){
                                 <h2>Create Product</h2>
                             </li>
                             <li>
-                                {loading && <div className='loading'>
+                                {loadingSave && <div className='loading'>
                                 <div className='loading1'></div>
                                 <div className='loading2'></div>
                                 </div>}
-                                {error && <div>{error}</div>}
+                                {errorSave && <div>{error}</div>}
                             </li>
                             <li>
                                 <label htmlFor="name">
@@ -192,9 +192,9 @@ function Products(props){
                             <td>{product.color}</td>
                             <td>{product.brand}</td>
                             <td>
-                            <button onClick={() => openModal(product)} ><i class="fas fa-edit"></i></button>
+                            <button onClick={() => openModal(product)} ><i className="fas fa-edit"></i></button>
                             {' '}
-                            <button onClick={() => deleteHandler(product)} ><i class="fas fa-trash"></i></button>
+                            <button onClick={() => deleteHandler(product)} ><i className="fas fa-trash"></i></button>
                             </td>
                         </tr>))}
                     </tbody>
