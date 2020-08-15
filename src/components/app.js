@@ -7,6 +7,7 @@ import Product from './route/product';
 import Cart from './route/cart';
 import Signin from './route/signin';
 import Register from './route/register';
+import Products from './route/products';
 
 function App(){
 
@@ -65,6 +66,7 @@ function App(){
               <Route  path="/cart/:id?" component={Cart}/>
               <Route  path="/signin" component={Signin}/>
               <Route  path="/register" component={Register}/>
+              <Route  path="/products" component={Products}/>
             </div>
           </main>
           <footer className='app__footer'>
