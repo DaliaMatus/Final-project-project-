@@ -8,6 +8,7 @@ import Cart from './route/cart';
 import Signin from './route/signin';
 import Register from './route/register';
 import Products from './route/products';
+import Shipping from './route/shipping';
 
 function App(){
 
@@ -67,6 +68,7 @@ function App(){
               <Route  path="/signin" component={Signin}/>
               <Route  path="/register" component={Register}/>
               <Route  path="/products" component={Products}/>
+              <Route  path="/shipping" component={Shipping}/>
             </div>
           </main>
           <footer className='app__footer'>
