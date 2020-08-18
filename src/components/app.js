@@ -10,6 +10,7 @@ import Register from './route/register';
 import Products from './route/products';
 import Shipping from './route/shipping';
 import Payment from './route/payment';
+import PlaceOrder from './route/placeOrder';
 
 function App(){
 
@@ -71,6 +72,7 @@ function App(){
               <Route  path="/products" component={Products}/>
               <Route  path="/shipping" component={Shipping}/>
               <Route path="/payment" component={Payment}/>
+              <Route path="/placeorder" component={PlaceOrder}/>
             </div>
           </main>
           <footer className='app__footer'>
