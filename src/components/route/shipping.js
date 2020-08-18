@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {useDispatch} from 'react-redux';
+
 import {saveShipping} from '../../actions/cartActions';
 import CheckOut from '../checkOut';
 
@@ -14,6 +15,7 @@ function Shipping(props){
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(saveShipping({ address, city, postalCode, country }));
+        props.history.push('payment');
     }
   
   

@@ -9,6 +9,7 @@ import Signin from './route/signin';
 import Register from './route/register';
 import Products from './route/products';
 import Shipping from './route/shipping';
+import Payment from './route/payment';
 
 function App(){
 
@@ -69,6 +70,7 @@ function App(){
               <Route  path="/register" component={Register}/>
               <Route  path="/products" component={Products}/>
               <Route  path="/shipping" component={Shipping}/>
+              <Route path="/payment" component={Payment}/>
             </div>
           </main>
           <footer className='app__footer'>
