@@ -58,11 +58,9 @@ function Products(props) {
                                 </div>
                                 <div className='details-action'>
                                     <ul>
-                                        <li className="product-price">
-                                        ${product.price}
-                                        </li> 
+            
                                         <li>
-                                        Status:{product.countInStock>0? "In Stock" : "Unavailable"}
+                                        Status:{product.countInStock>0? "Available" : "Unavailable"}
                                         </li> 
                                         <li>                              
                                             Quantity: <select value={qty} onChange={(e) =>{setQty(e.target.value)}}>
