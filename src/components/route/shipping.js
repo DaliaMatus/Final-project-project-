@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {saveShipping} from '../../actions/cartActions';
+import CheckOut from '../checkOut';
 
 function Shipping(props){
     const [address, setAddress] = useState('');
@@ -18,6 +19,7 @@ function Shipping(props){
   
     return(
         <div>
+            <CheckOut step1 step2></CheckOut>
             <div className='form'>
                 <form onSubmit={submitHandler}>
                     <ul className="form-container">
