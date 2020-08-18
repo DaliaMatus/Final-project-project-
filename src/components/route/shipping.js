@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {saveShipping} from '../../actions/cartActions';
 
 function Shipping(props){
     const [address, setAddress] = useState('');
@@ -8,11 +9,17 @@ function Shipping(props){
     const [country, setCountry] = useState('');
   
     const dispatch = useDispatch();
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        dispatch(saveShipping({ address, city, postalCode, country }));
+    }
+  
   
     return(
         <div>
             <div className='form'>
-                <form>
+                <form onSubmit={submitHandler}>
                     <ul className="form-container">
                         <li><h2>Shipping</h2></li>
                         <li>
