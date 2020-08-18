@@ -84,16 +84,15 @@ a{
     transform: translate(-50%, -50%)  rotate(-360deg);
   }
 }
+
 @import './app.scss';
 
-//Product
+//Check Out
+@import './checkOut.scss';
+
+//Routes
 @import '../style/route/product.scss';
-
-//Cart
 @import '../style/route/cart.scss';
-
-//Sign in
 @import '../style/route/signin.scss';
-
-//Products
 @import '../style/route/products.scss';
+

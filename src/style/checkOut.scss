@@ -1,0 +1,18 @@
+.check-out{
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    margin: 1rem auto;
+  
+  }
+  .check-out > div{
+    border-top: .3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1 1;
+    padding-top: 1rem;
+  }
+  .check-out > div.active{
+    border-top: .3rem rgb(255, 51, 102) solid;
+    color: rgb(255, 51, 102);
+  }
+  
