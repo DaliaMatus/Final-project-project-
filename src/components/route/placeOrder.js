@@ -94,9 +94,6 @@ function PlaceOrder(props){
                 <div className="placeorder-action">
                     <ul>
                         <li>
-                            <button className="button signin full-width" onClick={placeOrderHandler} >Place Order</button>
-                        </li>
-                        <li>
                             <h3>Order Summary</h3>
                         </li>
                         <li>
@@ -114,6 +111,9 @@ function PlaceOrder(props){
                         <li>
                             <div>Order Total</div>
                             <div>${total}</div>
+                        </li>
+                        <li>
+                            <button className="button signin place" onClick={placeOrderHandler} >Place Order</button>
                         </li>
                     </ul>
                 </div>      
