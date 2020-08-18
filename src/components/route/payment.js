@@ -36,6 +36,7 @@ function Payment(props){
                                     value="paypal"
                                     onChange={(e) => setPaymentMethod(e.target.value)}>
                                 </input>
+                                {' '}
                                 <label htmlFor="paymentMethod">
                                     Paypal
                                 </label>
