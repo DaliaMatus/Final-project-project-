@@ -1,11 +1,14 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import {useSelector,useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CheckOut from '../checkOut';
+import { createOrder } from '../../actions/orderActions';
 
 function PlaceOrder(props){
     const cart = useSelector(state => state.cart);
+    const orderCreate = useSelector(state => state.orderCreate);
+    const { loading, success, error, order } = orderCreate;
 
     const { cartItems, shipping, payment } = cart;
     if (!shipping.address) {
@@ -23,9 +26,19 @@ function PlaceOrder(props){
     var total = subtotal * taxPrice + shippingPrice;
     total=total.toFixed(2);
 
+    const dispatch = useDispatch();
+
     const placeOrderHandler = () => {
-        
+        dispatch(createOrder({
+            orderItems: cartItems, shipping, payment, subtotal, shippingPrice, tax, total
+        }));
     }
+
+    useEffect(()=>{
+        if(success){
+            props.history.push("/order" + order._id);
+        }
+    }, [success]);
 
     const checkoutHandler = () => {
         props.history.push("/signin?redirect=shipping");
