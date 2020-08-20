@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import {detailsOrder} from '../../actions/orderActions';
+import Paypal from '../paypal';
 
 function Order(props) {
 
@@ -86,7 +87,10 @@ function Order(props) {
         <div className="order-action">
           <ul>
             <li>
-              <button className="button signin full-width" onClick={payHandler} >Pay Now</button>
+              <Paypal
+                    amount={order.totalPrice}
+                    
+              />
             </li>
             <li>
               <h3>Order Summary</h3>
