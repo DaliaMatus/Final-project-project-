@@ -96,7 +96,7 @@ function Order(props) {
         </div>
         <div className="order-action">
           <ul>
-            <li>
+            <li className='paypal'>
             {loadingPay && <div>Finishing Payment...</div>}
               {!order.isPaid &&
                 <Paypal
