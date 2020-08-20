@@ -2,17 +2,27 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import {detailsOrder} from '../../actions/orderActions';
+import {detailsOrder, payOrder} from '../../actions/orderActions';
 import Paypal from '../paypal';
 
 function Order(props) {
 
+  const orderPay = useSelector(state => state.orderPay);
+  const { loading: loadingPay, success: successPay, error: errorPay } = orderPay;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(detailsOrder(props.match.params.id));
+    if (successPay) {
+      props.history.push("/profile");
+    } else {
+      dispatch(detailsOrder(props.match.params.id));
+    }
     return () => {
     };
-  }, []);
+  }, [successPay]);
+
+  const handleSuccessPayment = (paymentResult) => {
+    dispatch(payOrder(order, paymentResult));
+  }
 
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;
@@ -61,7 +71,7 @@ function Order(props) {
                             </div>
                         :
                         order.orderItems.map(item =>
-                            <li>
+                            <li key={item._id}>
                                 <div className="cart-image">
                                     <img src={item.image} alt="product" />
                                 </div>
@@ -87,10 +97,13 @@ function Order(props) {
         <div className="order-action">
           <ul>
             <li>
-              <Paypal
-                    amount={order.totalPrice}
-                    
-              />
+            {loadingPay && <div>Finishing Payment...</div>}
+              {!order.isPaid &&
+                <Paypal
+                      amount={order.totalPrice}
+                      onSuccess={handleSuccessPayment}
+                />
+              }
             </li>
             <li>
               <h3>Order Summary</h3>
