@@ -12,6 +12,7 @@ import Shipping from './route/shipping';
 import Payment from './route/payment';
 import PlaceOrder from './route/placeOrder';
 import Order from './route/order';
+import Profile from './route/profile';
 
 function App(){
 
@@ -75,10 +76,11 @@ function App(){
               <Route path="/payment" component={Payment}/>
               <Route path="/placeorder" component={PlaceOrder}/>
               <Route path="/order/:id" component={Order} />
+              <Route path="/profile" component={Profile} />
             </div>
           </main>
           <footer className='app__footer'>
-            ©1997-2020  All right reserved
+            ©Dalia Matus 1997-2020 | All right reserved
           </footer>        
         </div>
       </BrowserRouter>
