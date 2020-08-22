@@ -13,6 +13,7 @@ import Payment from './route/payment';
 import PlaceOrder from './route/placeOrder';
 import Order from './route/order';
 import Profile from './route/profile';
+import Orders from './route/orders';
 
 function App(){
 
@@ -42,6 +43,17 @@ function App(){
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign in</Link>
               }
+              {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#"  >Admin</a>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
+                  </li>
+                </ul>
+              </div>
+              )}
             </div>
           </header>
           <aside className='app__aside'>
@@ -77,6 +89,7 @@ function App(){
               <Route path="/placeorder" component={PlaceOrder}/>
               <Route path="/order/:id" component={Order} />
               <Route path="/profile" component={Profile} />
+              <Route path="/orders" component={Orders}/>
             </div>
           </main>
           <footer className='app__footer'>
