@@ -1,22 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch}from 'react-redux';
 import {listProducts} from '../../actions/productActions';
 
      
 function Home(props) {
-    
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const color = props.match.params.id ? props.match.params.id : '';  
   const productList =useSelector(state => state.productList);
   const {products, loading, error}=productList;
   const dispatch =useDispatch();
 
     useEffect(() =>{
-      dispatch(listProducts());
+      dispatch(listProducts(color));
       return()=>{
         //
       };
-    }, [])     
-        return loading ? <div className='loading'>
+    }, [color]);
+    
+    const submitHandler = (e) => {
+      e.preventDefault();
+      dispatch(listProducts(color, searchKeyword))
+    }
+        return <div>
+        {color &&
+          <h2>{color}</h2>}
+        <ul className="search">
+          <li>
+            <form onSubmit={submitHandler}>
+              <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
+              <button type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+        {loading ? <div className='loading'>
           <div className='loading1'></div>
           <div className='loading2'></div>
         </div> :
@@ -41,6 +58,8 @@ function Home(props) {
                 </li>)
               }                                          
             </ul>
+          }
+      </div>
     }
  
 

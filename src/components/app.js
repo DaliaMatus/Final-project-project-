@@ -63,24 +63,25 @@ function App(){
             <button onClick={closeMenu}>
               <i className="far fa-window-close"></i>
             </button>
-            <ul>           
+            <ul className='color'>           
               <li>
-                <a href='app.js'>Black</a>
+                <Link to ="/color/Black">Black</Link>
               </li>
               <li>
-                <a href='app.js'>Gray</a>
+                <Link to ="/color/Gray">Gray</Link>
               </li>
               <li>
-                <a href='app.js'>Pink</a>
+                <Link to ="/color/Pink">Pink</Link>
               </li>
               <li>
-                <a href='app.js'>White</a>
+                <Link to ="/color/White">White</Link>
               </li>
             </ul>
           </aside>
           <main className='app__main'>
             <div className='app__main-content'>
               <Route exact path="/" component={Home}/>
+              <Route path="/color/:id" component={Home} />
               <Route  path="/product/:id" component={Product}/>
               <Route  path="/cart/:id?" component={Cart}/>
               <Route  path="/signin" component={Signin}/>
