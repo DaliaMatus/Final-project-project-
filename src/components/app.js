@@ -63,7 +63,7 @@ function App(){
             <button onClick={closeMenu}>
               <i className="far fa-window-close"></i>
             </button>
-            <ul className='color'>           
+            <ul>           
               <li>
                 <Link to ="/color/Black">Black</Link>
               </li>

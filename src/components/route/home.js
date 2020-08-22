@@ -24,12 +24,16 @@ function Home(props) {
     }
         return <div>
         {color &&
-          <h2>{color}</h2>}
+          <h2 className='color'>{color}</h2>}
         <ul className="search">
           <li>
             <form onSubmit={submitHandler}>
-              <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
-              <button type="submit">Search</button>
+              <li>
+                <input placeholder='Search' name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
+              </li>
+              <li>
+                <button className='button signin' type="submit"><i class="fas fa-search"></i></button>
+              </li>
             </form>
           </li>
         </ul>
