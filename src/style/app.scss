@@ -10,6 +10,7 @@
       justify-content: space-between;
       align-items: center;
       padding:0.5rem;
+      flex-wrap: wrap;
 
       &-first button{
         font-size:3rem;
@@ -35,6 +36,45 @@
               transform: scale(0.95);
           }
       }
+    .dropdown{
+        display: inline-block;
+        position: relative;
+        margin:0 0 0 1rem;
+    }
+    .dropdown-content{
+        position: absolute;
+        display: none;
+        right:0;
+        padding: 1rem;
+        width: 20rem;
+        list-style-type: none;
+        z-index: 1;
+        height:30rem;
+        background-color: #000000;
+        margin:0.4rem -0.5rem 0 0
+        ;
+        a {
+            display:flex;
+            flex-direction: column;
+            color:rgb(255, 51, 102);
+            justify-content: space-around;
+            align-items:center;
+            margin:6rem 0 6rem 0;
+            transition: all .3s ease;
+            &:hover {
+                transform: scale(0.97);
+                color:#ffffff;
+            }
+    
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+        
+    }
+    .dropdown:hover .dropdown-content{
+        display: block;
+    } 
   }
 
   &__aside{
