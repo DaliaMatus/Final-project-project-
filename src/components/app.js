@@ -35,10 +35,10 @@ function App(){
               <button onClick={openMenu}>
                 <i className="fas fa-bars" ></i>
               </button>
-              <Link to='/'> Sweatshirts</Link>
+              <Link to="/"> Sweatshirts</Link>
             </div>
             <div className='app__header-second'>
-              <a href='cart.js'>Cart </a>
+              <Link to='/cart/'>Cart </Link>
               {
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign in</Link>
