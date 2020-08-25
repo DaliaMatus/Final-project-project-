@@ -34,13 +34,6 @@ function Signin(props){
                 <ul className="form-container">
                     <li><h2>Sign in</h2></li>
                     <li>
-                        {loading && <div className='loading'>
-                            <div className='loading1'></div>
-                            <div className='loading2'></div>
-                        </div>}
-                        {error && <div>{error}</div>}
-                    </li>
-                    <li>
                         <label htmlFor="email">
                             Email
                         </label>
