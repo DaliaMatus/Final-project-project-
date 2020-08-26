@@ -3,12 +3,10 @@ import {useSelector,useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CheckOut from '../checkOut';
-import { createOrder } from '../../actions/orderActions';
+
 
 function PlaceOrder(props){
     const cart = useSelector(state => state.cart);
-    const orderCreate = useSelector(state => state.orderCreate);
-    const { loading, success, error, order } = orderCreate;
 
     const { cartItems, shipping, payment } = cart;
     if (!shipping.address) {
@@ -28,20 +26,9 @@ function PlaceOrder(props){
 
     const dispatch = useDispatch();
 
-    const placeOrderHandler = () => {
-        dispatch(createOrder({
-            orderItems: cartItems, shipping, payment, subtotal, shippingPrice, tax, total
-        }));
-    }
-
-    useEffect(()=>{
-        if(success){
-            props.history.push("/order/" + order._id);
-        }
-    }, [success]);
 
     const checkoutHandler = () => {
-        props.history.push("/signin?redirect=shipping");
+        props.history.push("/order");
     }
     return(
         <div>
@@ -126,7 +113,7 @@ function PlaceOrder(props){
                             <div>${total}</div>
                         </li>
                         <li>
-                            <button className="button signin place" onClick={placeOrderHandler} >Place Order</button>
+                            <button className="button signin place" onClick={checkoutHandler} >Place Order</button>
                         </li>
                     </ul>
                 </div>      

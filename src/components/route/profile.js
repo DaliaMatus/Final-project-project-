@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { logout, update } from '../../actions/userActions';
-import { listMyOrders } from '../../actions/orderActions';
 
 function Profile(props) {
   const [name, setName] = useState('');
@@ -24,8 +23,7 @@ function Profile(props) {
   const userUpdate = useSelector(state => state.userUpdate);
   const { loading, success, error } = userUpdate;
 
-  const myOrderList = useSelector(state => state.myOrderList);
-  const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
+  
   useEffect(() => {
     if (userInfo) {
       console.log(userInfo.name)
@@ -33,7 +31,7 @@ function Profile(props) {
       setName(userInfo.name);
       setPassword(userInfo.password);
     }
-    dispatch(listMyOrders());
+   
     return () => {
 
     };
@@ -101,34 +99,6 @@ function Profile(props) {
                             </ul>
                         </form>
                     </div>
-                </div>
-                <div className="profile-orders content-margined">
-                    {
-                    loadingOrders ? <div>Loading...</div> :
-                    errorOrders ? <div>{errorOrders} </div> :
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>DATE</th>
-                                    <th>TOTAL</th>
-                                    <th>PAID</th>
-                                    <th>ACTIONS</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {orders.map(order => <tr key={order._id}>
-                                    <td>{order._id}</td>
-                                    <td>{order.createdAt}</td>
-                                    <td>{order.total}</td>
-                                    <td>{order.isPaid}</td>
-                                    <td>
-                                        <Link to={"/order/" + order._id}>DETAILS</Link>
-                                    </td>
-                                </tr>)}
-                            </tbody>
-                        </table>
-                    }
                 </div>
             </div>
         )

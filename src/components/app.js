@@ -11,9 +11,7 @@ import Products from './route/products';
 import Shipping from './route/shipping';
 import Payment from './route/payment';
 import PlaceOrder from './route/placeOrder';
-import Order from './route/order';
 import Profile from './route/profile';
-import Orders from './route/orders';
 
 function App(){
 
@@ -47,9 +45,6 @@ function App(){
               <div className="dropdown">
                 <a href="#"  >Admin</a>
                 <ul className="dropdown-content">
-                  <li>
-                    <Link to="/orders">Orders</Link>
-                  </li>
                   <li>
                     <Link to="/products">Products</Link>
                   </li>
@@ -90,9 +85,7 @@ function App(){
               <Route  path="/shipping" component={Shipping}/>
               <Route path="/payment" component={Payment}/>
               <Route path="/placeorder" component={PlaceOrder}/>
-              <Route path="/order/:id" component={Order} />
               <Route path="/profile" component={Profile} />
-              <Route path="/orders" component={Orders}/>
             </div>
           </main>
           <footer className='app__footer'>
