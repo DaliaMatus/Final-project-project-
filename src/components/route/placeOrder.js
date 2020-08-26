@@ -28,8 +28,10 @@ function PlaceOrder(props){
 
 
     const checkoutHandler = () => {
-        props.history.push("/order");
+        props.history.push("/");
     }
+
+
     return(
         <div>
             <CheckOut step1 step2 step3 step4></CheckOut>
