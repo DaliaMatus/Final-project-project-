@@ -49,7 +49,7 @@
         width: 20rem;
         list-style-type: none;
         z-index: 1;
-        height:30rem;
+        height:10rem;
         background-color: #000000;
         margin:0.4rem -0.5rem 0 0
         ;
@@ -59,7 +59,7 @@
             color:rgb(255, 51, 102);
             justify-content: space-around;
             align-items:center;
-            margin:6rem 0 6rem 0;
+            margin:3rem 0 3rem 0;
             transition: all .3s ease;
             &:hover {
                 transform: scale(0.97);
